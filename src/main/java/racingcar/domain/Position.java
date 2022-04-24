@@ -43,4 +43,14 @@ public class Position {
     public int hashCode() {
         return Objects.hash(position);
     }
+
+    public String print() {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < position; i++) {
+            result.append("-");
+        }
+
+        return result.toString();
+    }
 }

@@ -14,4 +14,9 @@ public class Name {
             throw new IllegalArgumentException("자동차 이름은 공백이거나 5자가 넘을 수 없다");
         }
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
