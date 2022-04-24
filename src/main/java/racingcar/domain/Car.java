@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import java.util.Objects;
+
 public class Car {
     private final Name name;
     private final Position position;
@@ -11,5 +13,26 @@ public class Car {
 
     public String print() {
         return name + " : " + position.print();
+    }
+
+    public Position getMaxPosition(Position maxPosition) {
+        return position.max(maxPosition);
+    }
+
+    public boolean isWinner(Position maxPosition) {
+        return position.equals(maxPosition);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(name, car.name) && Objects.equals(position, car.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position);
     }
 }

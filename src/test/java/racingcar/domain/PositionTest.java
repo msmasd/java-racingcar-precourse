@@ -31,4 +31,11 @@ class PositionTest {
         assertThat(position).isEqualTo(new Position(1));
     }
 
+    @Test
+    void 입력받은_값과_자신중에_큰_값을_반환한다() {
+        assertThat(position.max(new Position(1))).isEqualTo(new Position(1));
+        assertThat(position.max(new Position(0))).isEqualTo(new Position(0));
+        assertThat(position.max(new Position(-1))).isEqualTo(new Position(0));
+    }
+
 }

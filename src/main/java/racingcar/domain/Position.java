@@ -31,6 +31,23 @@ public class Position {
         }
     }
 
+    public String print() {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < position; i++) {
+            result.append("-");
+        }
+
+        return result.toString();
+    }
+
+    public Position max(Position maxPosition) {
+        if (maxPosition.position > this.position) {
+            return maxPosition;
+        }
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,15 +59,5 @@ public class Position {
     @Override
     public int hashCode() {
         return Objects.hash(position);
-    }
-
-    public String print() {
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 0; i < position; i++) {
-            result.append("-");
-        }
-
-        return result.toString();
     }
 }
