@@ -7,18 +7,24 @@ public class Position {
     public static final int MIN_MOVE_VALUE = 0;
     public static final int MAX_MOVE_VALUE = 9;
     public static final int CAN_MOVE_EQUAL_OR_GRATER_THAN = 4;
-
+    private final RandomGenerator randomGenerator;
     private int position;
 
     public Position() {
-        position = INIT_POSITION;
+        this(INIT_POSITION, new RandomGeneratorImpl());
     }
 
     public Position(int position) {
-        this.position = position;
+        this(position, new RandomGeneratorImpl());
     }
 
-    public void move(int value) {
+    public Position(int position, RandomGenerator randomGenerator) {
+        this.position = position;
+        this.randomGenerator = randomGenerator;
+    }
+
+    public void move() {
+        int value = randomGenerator.getNumber();
         moveValidate(value);
         if (value >= CAN_MOVE_EQUAL_OR_GRATER_THAN) {
             position++;
