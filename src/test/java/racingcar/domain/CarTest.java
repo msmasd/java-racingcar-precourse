@@ -16,10 +16,10 @@ class CarTest {
 
     @Test
     void 자동차를_출력할_때_자동차_이름과_현재_위치를_출력할_수_있다() {
-        assertThat(mycar.print()).isEqualTo("mycar : --");
+        assertThat(mycar.printCurrentPosition()).isEqualTo("mycar : --");
 
         Car car = new Car(new Name("car"), new Position(0));
-        assertThat(car.print()).isEqualTo("car : ");
+        assertThat(car.printCurrentPosition()).isEqualTo("car : ");
     }
 
     @Test

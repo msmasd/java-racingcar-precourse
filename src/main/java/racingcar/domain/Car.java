@@ -11,8 +11,12 @@ public class Car {
         this.position = position;
     }
 
-    public String print() {
+    public String printCurrentPosition() {
         return name + " : " + position.print();
+    }
+
+    public String printName() {
+        return name.toString();
     }
 
     public Position getMaxPosition(Position maxPosition) {
